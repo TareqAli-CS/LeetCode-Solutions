@@ -1,24 +1,16 @@
 class Solution {
 public:
-    int removeDuplicates(vector<int>& nums) {
-    vector<int>v{1,1,2};
-    set<int>st;
-    int size = nums.size();
-    int buffer;
-    for(int i = 0 ; i < nums.size() ; i++)
+    int removeDuplicates(vector<int>& nums)
     {
-
-        st.insert(nums[i]);
-        if(buffer == st.size())
+        int counter = 0  ;
+        for(int follow = 1 ; follow < nums.size() ; follow++)
         {
-            nums.erase(nums.begin()+i,nums.begin()+i+1);
-            i--;
+            if( nums[follow] != nums[counter] )
+            {
+                 counter++;
+            }
+            nums[counter] = nums[follow];
         }
-        
-        buffer = st.size();
-    }
-        
-    
-    return nums.size();
+        return counter+1;
     }
 };
