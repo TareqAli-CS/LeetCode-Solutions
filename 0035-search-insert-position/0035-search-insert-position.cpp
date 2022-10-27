@@ -6,6 +6,7 @@ public:
         return nums.size() ;
     else if(target < nums[0])
         return 0;
+        
     int first = 0 ;
     int end = nums.size() - 1;
     int mid = 0 ;
