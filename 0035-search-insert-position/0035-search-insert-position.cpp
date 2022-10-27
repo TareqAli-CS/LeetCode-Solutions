@@ -2,6 +2,10 @@ class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
         
+    if(target > nums[nums.size() - 1 ])
+        return nums.size() ;
+    else if(target < nums[0])
+        return 0;
     int first = 0 ;
     int end = nums.size() - 1;
     int mid = 0 ;
@@ -18,13 +22,6 @@ public:
         else
             end = mid - 1 ;
     }
-
-    if(target > nums[nums.size() - 1 ])
-        return nums.size() ;
-    else if(target < nums[0])
-        return 0;
-        
-        
     return first;
       
     }
