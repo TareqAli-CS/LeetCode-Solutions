@@ -1,30 +1,20 @@
 class Solution {
 public:
+    
+    int sum_Ascii(string s)
+    {
+        int sum = 0 ;
+        for(auto character : s)
+        {
+             sum = sum + int(character);
+        }
+    return sum;
+    }
+    
     char findTheDifference(string s, string t) {
         
     
-    map<char,int>mpS;
-    
-    for(int i = 0 ; i < s.length() ; i++ )
-    {
-        mpS[s[i]]++;
-        if(mpS[t[i]] == 0)
-        {
-            mpS[t[i]] = -1;
-        }
-        else
-        mpS[t[i]]--;
-    }
-    mpS[t[t.length()-1]]--;
-        
-   for(auto element : mpS)
-    {
-        if(element.second == -1)
-            return element.first ;
-    }
-        
-        
-      return  '-1';
+     return char(sum_Ascii(t) - sum_Ascii(s));
     }
     
 };
