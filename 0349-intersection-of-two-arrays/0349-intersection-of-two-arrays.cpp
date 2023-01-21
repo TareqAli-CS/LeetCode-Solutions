@@ -4,7 +4,7 @@ public:
         
         
         set<int>st1;
-    set<int>st2;
+    unordered_set<int>st2;
     for(auto item : v)
     {
         st1.insert(item);
