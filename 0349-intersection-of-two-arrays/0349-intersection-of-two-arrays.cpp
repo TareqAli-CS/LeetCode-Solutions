@@ -3,22 +3,18 @@ public:
     vector<int> intersection(vector<int>& v, vector<int>& v2) {
         
         
-        set<int>st1;
-    unordered_set<int>st2;
+    unordered_set<int>st1;
     for(auto item : v)
     {
         st1.insert(item);
     }
+    vector<int>ans;
     for(auto item : v2)
     {
-        st2.insert(item);
-    }
-    vector<int>ans;
-    for(auto itt = st1.begin() ; itt != st1.end() ; itt++)
-    {
-        if(st2.count(*itt))
+        if(st1.count(item))
         {
-            ans.push_back(*itt);
+             ans.push_back(item);
+            st1.erase(item);
         }
     }
         
