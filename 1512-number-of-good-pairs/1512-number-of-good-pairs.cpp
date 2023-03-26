@@ -1,16 +1,18 @@
 class Solution {
 public:
     int numIdenticalPairs(vector<int>& v) {
-        int counter = 0;
-        for(int i = 0 ;i < v.size() ; i++)
+        map<int,int>mp;
+        for(int i = 0; i < v.size() ; i++)
         {
-            for(int j = i+1 ; j < v.size() ; j++)
-            {
-                if(v[i] == v[j])
-                counter++;
-            }
+            mp[v[i]]++;
         }
-        return counter;
+        int counter = 0;
+        for(auto ele : mp)
+        {
+           counter += ( ( ele.second *(ele.second - 1))/2);
+            
+        }
+        return counter ;;
     }
     
 };
