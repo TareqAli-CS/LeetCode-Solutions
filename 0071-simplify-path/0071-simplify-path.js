@@ -19,7 +19,6 @@ var simplifyPath = function(path) {
             }
         }
     }
-    console.log(ans)
     if(ans.length > 1)
         ans.pop();
     else if(ans.length == 0)
